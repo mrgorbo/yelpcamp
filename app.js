@@ -29,6 +29,9 @@ const commentRoutes  = require("./routes/comments"),
 // declare the app variable **VERY IMPORTANT**
 const app = express();
 
+// Use bluebird promise library for Mongoose
+mongoose.Promise = require('bluebird');
+
 // connect to the MongoDB databases
 // use this to connect to a local MongoDB
 //mongoose.connect("mongodb://localhost/yelp_camp");

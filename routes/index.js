@@ -40,7 +40,6 @@ router.put("/register", function(req, res) {
     // find and update the selected campground
     let id = req.params.id;
     let user = req.body.user;
-    /*
     User.findByIdAndUpdate(id, password, function(err, updatedCampground){
         if(err) {
             res.redirect("/campgrounds");
@@ -48,7 +47,6 @@ router.put("/register", function(req, res) {
             res.redirect("/campgrounds/" + id);
         }
     });
-    */
 });
 
 //=========================================================
@@ -91,4 +89,5 @@ router.post("/forgot", function(req, res) {
         }
     });
 });
+
 module.exports = router;
