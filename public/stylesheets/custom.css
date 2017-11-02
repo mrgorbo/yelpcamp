@@ -1,0 +1,59 @@
+.thumbnail {
+    padding: 0;
+    box-shadow: 4px 4px 2px #888;
+}
+.thumbnail img {
+    width: 100%;
+}
+.thumbnail .caption-full {
+    padding: 9px;
+}
+.delete-form {
+    float: right;
+}
+.jumbotron {
+    color: #FFF;
+    box-shadow: 4px 4px 2px #888;
+    background-image: url(https://source.unsplash.com/W9BWiLHPiVw);
+}
+.opacity-min {
+    opacity: 0.8;
+}
+.right {
+    float: right;
+}
+.form {
+    width:30%;
+    margin: 35px auto;
+}
+.whitebackground {
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 10px;
+}
+.bottom {
+    padding-top: 10px;
+}
+#login {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: -1;
+}
+#login li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(https://source.unsplash.com/U22mr8QmDvE);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0.35;
+    z-index: -1;
+}

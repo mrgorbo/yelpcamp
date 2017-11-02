@@ -1,0 +1,97 @@
+body {
+    background-color: #000;
+}
+
+#unsplash {
+    padding-top:35vh;
+    float:right;
+    color:white;
+}
+#unsplash a {
+    color: white;
+    text-decoration: underline;
+}
+.landing_border {
+    border-left: 15px solid rgba(255,255,255,0.4);
+    border-bottom-left-radius: 10px;
+    margin-left: 37%;
+    border-right: 15px solid rgba(255,255,255,0.4);
+    border-bottom-right-radius: 10px;
+    margin-right: 37%;
+}
+#landing-header {
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+    z-index: 1;
+}
+#landing-header h1 {
+    color: #FFF;
+}
+
+.bottom {
+    padding-top: 10px;
+}
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: -1;
+}
+.slideshow li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: -1;
+    animation: imageAnimation 50s linear infinite;
+}
+
+/* Set the background image for each "slide" */
+.slideshow li:nth-child(1) {
+    background-image: url(https://source.unsplash.com/mzZVGFfMOkA);
+}
+.slideshow li:nth-child(2) {
+    background-image: url(https://source.unsplash.com/rRljZzjNQAA);
+    animation-delay: 10s;
+}
+.slideshow li:nth-child(3) {
+    background-image: url(https://source.unsplash.com/h4bBVo_CpqQ);
+    animation-delay: 20s;
+}
+.slideshow li:nth-child(4) {
+    background-image: url(https://source.unsplash.com/a1mVFtmmWjI);
+    animation-delay: 30s;
+}
+.slideshow li:nth-child(5) {
+    background-image: url(https://source.unsplash.com/AtvuPUenaeI);
+    animation-delay: 40s;
+}
+
+/* Animation keyframes */
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}

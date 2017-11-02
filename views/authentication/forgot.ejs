@@ -1,0 +1,61 @@
+<% include ../partials/header %>
+
+<div class="container whitebackground">
+    <div class="row">
+        <h1 class="text-center">FORGOT?</h1>
+        <div class="form">
+            <!-- NEW COMMENT FORM -->
+            <% if (message != "None") { %>
+                <form action="/forgot?_method=PUT" method="POST">
+            <% } else { %>
+                <form action="/forgot" method="POST">
+            <% } %>
+                <div class="form-group">
+                    <% if (message != "None") { %>
+                        <input class="form-control" type="text" id="username" name="username" value="<%= username %>" disabled>
+                    <% } else { %>
+                        <input class="form-control" type="text" id="username" name="username" placeholder="Username">
+                    <% } %>
+                </div>
+                <% if(message != "None") { %>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" id="verify" placeholder="Confirm Password" onkeyup="Verify(this.value);">
+                    </div>
+                <% } %>
+                <div class="form-group">
+                    <% if (message != "None") { %>
+                        <button class="btn btn-lg btn-primary btn-block" id="submitbtn" disabled>SUBMIT</button>
+                    <% } else { %>
+                        <button class="btn btn-lg btn-primary btn-block" id="submitbtn">SUBMIT</button>
+                    <% } %>
+                </div>
+            </form>
+            <a href="/campgrounds">Go back</a>
+        </div>
+    </div>
+</div>
+
+<ul id="login">
+    <li></li>
+</ul>
+
+<script>
+
+    function Verify(src) {
+        var tree = document.getElementById("password").value || 1;
+        var leaf = document.getElementById("verify").value || 0;
+        
+        var name = document.getElementById("username").value;
+        if((src == tree && name) || (src == name && tree == leaf)) {
+            document.getElementById("submitbtn").disabled = false;
+        }
+    }
+
+    document.getElementById("username").focus();
+
+</script>
+
+<% include ../partials/footer %>

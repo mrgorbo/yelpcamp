@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+
+<div class="container whitebackground">
+    <div class="row">
+        <h1 style="text-align:center;">SIGN UP</h1>
+        <div style="width:30%; margin: 35px auto;">
+            <!-- NEW COMMENT FORM -->
+            <form name="register" action="/register" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" id="username" name="username" id="username" placeholder="Username" onkeyup="Verify(this.value);">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" id="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" id="verify" placeholder="Confirm Password" onkeyup="Verify(this.value);">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block" id="registerbtn">REGISTER</button>
+                </div>
+            </form>
+            <a href="/campgrounds">Go back</a>
+        </div>
+    </div>
+</div>
+
+<ul id="login">
+    <li></li>
+</ul>
+
+<script>
+    
+    function Verify(src) {
+        var tree = document.getElementById("password").value || 1;
+        var leaf = document.getElementById("verify").value || 0;
+        
+        var name = document.getElementById("username").value;
+        if((src == tree && name) || (src == name && tree == leaf)) {
+            document.getElementById("registerbtn").disabled = false;
+        }
+    }
+    
+    document.getElementById("registerbtn").disabled = true;
+    document.getElementById("username").focus();
+
+</script>
+
+<% include ../partials/footer %>

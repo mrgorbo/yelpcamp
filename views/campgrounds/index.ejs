@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <!-- JUMBROTRON AT THE TOP -->
+    <header class="jumbotron">
+        <div class="container"></div>
+            <h1>Welcome to the campgrounds section.</h1>
+            <p>View campgrounds in your area!</p>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add new campground</a>
+            </p>
+        </div>
+    </header>
+    <!-- START OF THE IMAGE GRID -->
+    <div class="container">
+        <hr />
+            <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+            <% grounds.forEach(function(camp) { %>
+                <div class="col-md-3 col-sm-6">
+                    <div class="thumbnail">
+                        <img src="<%= camp.image %>">
+                        <div class="caption">
+                            <h4><%= camp.name %></h4>
+                        </div>
+                        <p>
+                            <a href="/campgrounds/<%= camp._id %>" class="btn btn-primary">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
