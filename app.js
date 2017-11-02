@@ -33,10 +33,7 @@ const app = express();
 mongoose.Promise = require('bluebird');
 
 // connect to the MongoDB databases
-// use this to connect to a local MongoDB
-//mongoose.connect("mongodb://localhost/yelp_camp");
-// use this to connect to a remote MongoDB
-mongoose.connect("mongodb://yelpworker:password@ds241875.mlab.com:41875/mrgorbo_yelp_camp");
+mongoose.connect(process.env.DATABASEURL);
 
 // set the view engine
 app.set("view engine", "ejs");
@@ -76,13 +73,23 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 /*
-    remove all the campground data from the DB
+    remove all the campground/comment data from the DB
 */ /*
 Camp.remove({}, function(err) {
     if(err) {
         console.log(err);
+    } else {
+        console.log("All campgrounds removed from local database.");
     }
-}); */
+});
+Comment.remove({}, function(err) {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log("All comments removed from the local database.");
+    }
+})
+*/
 
 //==============================================================================
 //          START THE API
