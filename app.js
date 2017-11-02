@@ -33,7 +33,7 @@ const app = express();
 // use this to connect to a local MongoDB
 //mongoose.connect("mongodb://localhost/yelp_camp");
 // use this to connect to a remote MongoDB
-mongodb://yelpworker:password@ds241875.mlab.com:41875/mrgorbo_yelp_camp
+mongoose.connect("mongodb://yelpworker:password@ds241875.mlab.com:41875/mrgorbo_yelp_camp");
 
 // set the view engine
 app.set("view engine", "ejs");
