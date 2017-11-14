@@ -32,7 +32,9 @@ const app = express();
 // Use bluebird promise library for Mongoose
 mongoose.Promise = require('bluebird');
 
+//console.log(process.env.DATABASEURL)
 // connect to the MongoDB databases
+console.log("DATABASEURL - " + process.env.DATABASEURL)
 mongoose.connect(process.env.DATABASEURL);
 
 // set the view engine
